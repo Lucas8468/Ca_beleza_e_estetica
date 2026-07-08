@@ -1,0 +1,200 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+body {
+  background-color: #690049;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.h1 {
+  color: #ff6ed3;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.subtitulo-unhas {
+  color: #ff6ed3;
+  font-size: 24px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+/* --- CONTAINER DOS CARDS (MOBILE FIRST) --- */
+.Container {
+  background: antiquewhite;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  
+  /* Celular: Empilha um embaixo do outro */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+/* --- CARDS INDIVIDUAIS --- */
+.card-servico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.text-servico {
+  color: #ff6ed3;
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  text-align: center;
+}
+
+.img-servico {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Esconde as linhas separadoras no celular */
+.hr-divisoria {
+  display: none;
+}
+
+/* --- SEÇÃO DE CONTATO --- */
+.contato-container {
+  margin-top: 40px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.contato-title {
+  color: #ff6ed3;
+  text-decoration: underline;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.lista-contato {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.li {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.wpp {
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px 20px;
+  background-color: antiquewhite;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+
+/* --- CONFIGURAÇÃO PARA DESKTOP --- */
+@media (min-width: 992px) {
+  .Container {
+    flex-direction: row; 
+    justify-content: flex-start; /* Alinha do início para permitir a rolagem */
+    align-items: stretch;
+    padding: 40px 20px;
+    gap: 30px; /* Espaçamento fixo entre os cards e as linhas */
+    
+    /* Ativa a barra de rolagem horizontal */
+    overflow-x: auto; 
+    white-space: nowrap; 
+  }
+
+  .card-servico {
+    width: 280px; /* Largura fixa para o card não esmagar */
+    flex-shrink: 0; /* Impede o card de diminuir de tamanho */
+    justify-content: flex-start;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  /* Exibe as linhas verticais divisórias apenas no computador */
+  .hr-divisoria {
+    display: block;
+    width: 1px;
+    background-color: black;
+    align-self: center;
+    height: 240px;
+    flex-shrink: 0; /* Impede a linha de sumir com o scroll */
+  }
+}
+/* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM (DESKTOP) --- */
+/* --- CONFIGURAÇÃO PARA DESKTOP --- */
+@media (min-width: 992px) {
+  .Container {
+    display: inline-flex; /* Garante que o container cresça horizontalmente com o conteúdo */
+    flex-direction: row; 
+    justify-content: flex-start; 
+    align-items: stretch;
+    padding: 40px 20px;
+    gap: 30px; 
+    
+    /* Ativa a rolagem */
+    overflow-x: auto; 
+    max-width: 100%; /* Impede o container de passar do limite da tela do PC */
+  }
+
+  .card-servico {
+    width: 280px; 
+    flex-shrink: 0; /* IMPEDE O CARD DE SER ESMAGADO */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  .hr-divisoria {
+    display: block;
+    width: 1px;
+    background-color: black;
+    align-self: center;
+    height: 240px;
+    flex-shrink: 0; /* IMPEDE A LINHA DE SER ESMAGADA */
+  }
+
+  /* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM --- */
+  .Container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .Container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05); 
+    border-radius: 10px;
+  }
+
+  .Container::-webkit-scrollbar-thumb {
+    background-color: #690049; 
+    border-radius: 10px;
+    border: 1px solid antiquewhite; 
+  }
+
+  .Container::-webkit-scrollbar-thumb:hover {
+    background-color: #4a0033; 
+  }
+}
